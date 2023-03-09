@@ -1,7 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const app = express()
-const bodyParse = require('body-parser')
 const methodOverride = require('method-override')
 const routes = require('./routes')
 const PORT = process.env.PORT || 3000
@@ -13,7 +12,7 @@ app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}))
 app.set('view engine','hbs')
 
 app.use(express.static('public')) //設定靜態檔案的路徑，指定 public 為靜態檔案的資料夾。當有靜態檔案請求時，Express 就會自動在指定的 public 資料夾中尋找對應的檔案並回傳。
-app.use(bodyParse.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true })) //Express內建body-parser，解析POST送過來的req.body，必須放在路由之前
 app.use(methodOverride('_method'))
 app.use(routes)
 
