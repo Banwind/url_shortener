@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars')
 const app = express()
 const methodOverride = require('method-override')
 const routes = require('./routes')
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 
 require('./config/mongoose')
 

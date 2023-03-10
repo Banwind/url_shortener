@@ -3,20 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node models/seeds/seeder.js",
+    "stand": "standard && node my-tests.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "express-handlebars": "^4.0.2",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.7"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
 }
