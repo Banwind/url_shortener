@@ -6,7 +6,7 @@ const short = require('../../public/js/crypto')
 router.get('/', (req, res) => {
   const origin_url = req.query.origin_url // 獲取 URL 中的查詢參數（Query String），即 URL 中問號後面的參數
   const short_url = short.hash(origin_url)
-  const URL = new URLs({ origin_url:origin_url, short_url:"http://localhost:3000/" + short_url})
+  const URL = new URLs({ origin_url:origin_url, short_url:"http://localhost:3000/URLs/" + short_url})
   
   URLs.findOne({ origin_url })
     .then((doc) => {
