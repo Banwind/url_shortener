@@ -4,7 +4,7 @@ const URLs = require('../../models/urls')
 
 router.get('/:short_url', (req, res) => {
   const { short_url } = req.params //抓取網址上的變數
-  URLs.findOne({ short_url }) //過濾條件，用findone抓出單一資料
+  URLs.findOne({ short_url }) //過濾條件，用findOne抓出單一資料
     .lean()
     .then((doc)=> {
       if (doc) {
