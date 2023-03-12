@@ -14,6 +14,14 @@ router.get('/:short_url', (req, res) => {
       }
     })
     .catch(error => console.log(error))
+    .then((doc)=> {
+      if (doc) {
+        res.redirect(doc.origin_url) //如果是就跳轉，不是就404
+      } else {
+        res.status(404).send('Not found')
+      }
+    })
+    .catch(error => console.log(error))
 })
 
 module.exports = router
