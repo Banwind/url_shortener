@@ -5,8 +5,10 @@ const URLs = require('../../models/urls')
 router.get('/', (req, res) => {
   URLs.find()
     .lean()
-    .then(() => res.render('index.hbs'))
+    .then(() => res.render('short.hbs'))
     .catch(error => console.error(error))
 })
 
 module.exports = router
+
+// 還需要改動
