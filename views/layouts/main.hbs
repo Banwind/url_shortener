@@ -27,12 +27,15 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script>
+    const copyButton = document.querySelector("#copy-button")
+    copyButton.addEventListener("click", copyForm)
+
     function copyForm() {
-      const short_url = document.getElementById("short_url").value;
+      const short_url = document.querySelector("#short_url").value;
       navigator.clipboard.writeText(short_url)
         .then(() => alert("Form data copied!"))
         .catch(() => alert("Unable to copy form data!"));
-    }
-  </script>    
+    }    
+  </script>
 </body>
 </html>
